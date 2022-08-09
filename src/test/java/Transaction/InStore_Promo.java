@@ -5,6 +5,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
 
 import java.io.IOException;
@@ -16,12 +18,11 @@ public class InStore_Promo extends Transaction {
     public InStore_Promo() throws IOException {
     }
 
-
     @Test
     public void inStorePromoSearch() throws InterruptedException, IOException {
         inStorePromo();
         //eksekusi search
-        Thread.sleep(1000);
+        Thread.sleep(2000);
         WebElement no_kontrak = driver.findElement(By.cssSelector("#noKontrak"));
         no_kontrak.click();
         no_kontrak.sendKeys(Keys.F9);
@@ -42,7 +43,7 @@ public class InStore_Promo extends Transaction {
                         dataTemp.append(driver.findElement(By.cssSelector("body > div:nth-child(1) > div:nth-child(5) > section:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(7) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > table:nth-child(1) > tbody:nth-child(2) > tr:nth-child(" + row + ") > td:nth-child(" + cell + ")")).getText());
                     }
                     if (!dataTemp.toString().toUpperCase().contains(dataFillSearch.get(value))) {
-                        System.out.println("baris : " + dataTemp + "error");
+                        System.out.println("baris : " + dataTemp + " Error");
                     }
                 }
             } else {
@@ -52,6 +53,11 @@ public class InStore_Promo extends Transaction {
             search.clear();
             Thread.sleep(1000);
         }
+    }
+
+    @AfterTest
+    public void closeBrowser(){
+        driver.close();
     }
 
 }

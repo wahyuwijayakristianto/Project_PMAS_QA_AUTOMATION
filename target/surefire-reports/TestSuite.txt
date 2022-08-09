@@ -1,4 +1,17 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 0, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.535 s - in TestSuite
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 28.568 s <<< FAILURE! - in TestSuite
+outStoreCekData(Transaction.OutStore_Tenant)  Time elapsed: 1.117 s  <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <a href="#">...</a> is not clickable at point (115, 152). Other element would receive the click: <div class="col-sm-12">...</div>
+  (Session info: chrome=96.0.4664.110)
+Build info: version: '4.1.2', revision: '9a5a329c5a'
+System info: host: 'DESKTOP-K5O4J25', ip: '10.4.7.198', os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [708907e84f59205b6f58388f33a336ee, clickElement {id=61017ef0-5892-41de-9f87-e15744ad6d92}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 96.0.4664.110, chrome: {chromedriverVersion: 96.0.4664.45 (76e4c1bb2ab46..., userDataDir: C:\Users\Wahyu\AppData\Loca...}, goog:chromeOptions: {debuggerAddress: localhost:52716}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:52716/devtoo..., se:cdpVersion: 96.0.4664.110, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (708907e84f59205b6f58388f33a336ee)] -> link text: Transaction]
+Session ID: 708907e84f59205b6f58388f33a336ee
+	at Transaction.OutStore_Tenant.outStoreCekData(OutStore_Tenant.java:62)
+

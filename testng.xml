@@ -3,7 +3,7 @@
 <suite name="All Test Suite" >
     <test verbose="2" preserve-order="true" name="C:/Users/Wahyu/IdeaProjects/PMAS" parallel="tests" >
         <classes>
-            <class name="Transaction.InStore_Promo"/>
+            <class name="Transaction.OutStore_Tenant"/>
         </classes>
     </test>
 </suite>

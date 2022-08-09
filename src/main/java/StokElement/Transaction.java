@@ -2,7 +2,6 @@ package StokElement;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.io.FileInputStream;
@@ -10,30 +9,13 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class Transaction  {
+public class Transaction {
 
     WebDriver driver;
-    public WebDriver login() throws IOException {
-        Properties prop = new Properties();
-        FileInputStream fis = new FileInputStream("C:\\Users\\Wahyu\\IdeaProjects\\PMAS\\src\\main\\resources\\data.properties");
-        prop.load(fis);
-        String dir = System.getProperty("user.dir");
-        System.setProperty("webdriver.chrome.driver",dir +"//driver_storage//chromedriver.exe");
-        driver = new ChromeDriver();
-        driver.get("http://10.231.126.7:7007/login");
-        String nik = prop.getProperty("nik");
-        String password = prop.getProperty("password");
-        driver.findElement(By.cssSelector("#nik")).sendKeys(nik);
-        driver.findElement(By.cssSelector("#pin")).sendKeys(password);
-        driver.findElement(By.cssSelector("#btnLogin")).click();
-        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
-        driver.findElement(By.cssSelector(".logo-lg")).click();
-        return driver;
-    }
     By transaction = text("Transaction");
     By saranaPromosi = text("Sarana Promosi");
     By inStorePromo = By.cssSelector("a[href='/inStorePromo']");
-    By outStoreTenant = text("OutStore/Tenant");
+    By outStoreTenant = By.cssSelector("a[href='/outStoreTenant']");
     By updateProduct = text("Update Product");
     By tagProduct = text("Tag Product");
     By masterPerubahaanTag = text("Master Perubahaan TAG");
@@ -57,6 +39,24 @@ public class Transaction  {
     By compareDataPromo = text("Compare Data Promo");
     By compareHargaJual = text("Compare Harga Jual");
 
+    public WebDriver login() throws IOException {
+        Properties prop = new Properties();
+        FileInputStream fis = new FileInputStream("C:\\Users\\Wahyu\\IdeaProjects\\PMAS\\src\\main\\resources\\data.properties");
+        prop.load(fis);
+        String dir = System.getProperty("user.dir");
+        System.setProperty("webdriver.chrome.driver", dir + "//driver_storage//chromedriver.exe");
+        driver = new ChromeDriver();
+        driver.get("http://10.231.126.7:7007/login");
+        String nik = prop.getProperty("nik");
+        String password = prop.getProperty("password");
+        driver.findElement(By.cssSelector("#nik")).sendKeys(nik);
+        driver.findElement(By.cssSelector("#pin")).sendKeys(password);
+        driver.findElement(By.cssSelector("#btnLogin")).click();
+        driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+        driver.findElement(By.cssSelector(".logo-lg")).click();
+        return driver;
+    }
+
     private By text(String elementtext) {
         return By.linkText(elementtext);
     }
@@ -68,114 +68,114 @@ public class Transaction  {
 
     }
 
-    public WebElement outStoreTenant() {
+    public void outStoreTenant() {
         driver.findElement(transaction).click();
         driver.findElement(saranaPromosi).click();
-        return driver.findElement(outStoreTenant);
+        driver.findElement(outStoreTenant).click();
     }
 
-    public WebElement masterPerubahanTag() {
+    public void masterPerubahanTag() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
         driver.findElement(tagProduct).click();
-        return driver.findElement(masterPerubahaanTag);
+        driver.findElement(masterPerubahaanTag).click();
     }
 
-    public WebElement masterUpdateTag() {
+    public void masterUpdateTag() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
         driver.findElement(tagProduct).click();
-        return driver.findElement(updateTag);
+        driver.findElement(updateTag).click();
     }
 
-    public WebElement classProduct() {
+    public void classProduct() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
-        return driver.findElement(classProduct);
+        driver.findElement(classProduct).click();
     }
 
-    public WebElement minPKMPerType() {
+    public void minPKMPerType() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
-        return driver.findElement(minPKMPerType);
+        driver.findElement(minPKMPerType).click();
     }
 
-    public WebElement minOrder() {
+    public void minOrder() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
-        return driver.findElement(minOrder);
+        driver.findElement(minOrder).click();
     }
 
-    public WebElement minorCustomize() {
+    public void minorCustomize() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
-        return driver.findElement(minorCustomize);
+        driver.findElement(minorCustomize).click();
     }
 
-    public WebElement updateMPKM0() {
+    public void updateMPKM0() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
-        return driver.findElement(updateMPKM0);
+        driver.findElement(updateMPKM0).click();
     }
 
-    public WebElement minPKM_MinOrder() {
+    public void minPKM_MinOrder() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
-        return driver.findElement(minPKM_MinOrder);
+        driver.findElement(minPKM_MinOrder).click();
     }
 
-    public WebElement minorPerType() {
+    public void minorPerType() {
         driver.findElement(transaction).click();
         driver.findElement(updateProduct).click();
-        return driver.findElement(minorPerType);
+        driver.findElement(minorPerType).click();
     }
 
-    public WebElement updateTypeToko() {
+    public void updateTypeToko() {
         driver.findElement(transaction).click();
-        return driver.findElement(updateTypeToko);
+        driver.findElement(updateTypeToko).click();
     }
 
-    public WebElement barangCustomize() {
+    public void barangCustomize() {
         driver.findElement(transaction).click();
-        return driver.findElement(barangCustomize);
+        driver.findElement(barangCustomize).click();
     }
 
-    public WebElement barangTerlarang() {
+    public void barangTerlarang() {
         driver.findElement(transaction).click();
-        return driver.findElement(barangTerlarang);
+        driver.findElement(barangTerlarang).click();
     }
 
-    public WebElement prosesAutoBTLItem() {
+    public void prosesAutoBTLItem() {
         driver.findElement(transaction).click();
         driver.findElement(prosesAutoBtl).click();
-        return driver.findElement(prosesBTLPerItem);
+        driver.findElement(prosesBTLPerItem).click();
     }
 
-    public WebElement prosesAutoBTLToko() {
+    public void prosesAutoBTLToko() {
         driver.findElement(transaction).click();
         driver.findElement(prosesAutoBtl).click();
-        return driver.findElement(prosesBTLPerToko);
+        driver.findElement(prosesBTLPerToko).click();
     }
 
-    public WebElement updateMindis() {
+    public void updateMindis() {
         driver.findElement(transaction).click();
-        return driver.findElement(updateMindis);
+        driver.findElement(updateMindis).click();
     }
 
-    public WebElement autoreviewMPKM() {
+    public void autoreviewMPKM() {
         driver.findElement(transaction).click();
-        return driver.findElement(autoReviewMPKM);
+        driver.findElement(autoReviewMPKM).click();
     }
 
-    public WebElement promoTokoGO() {
+    public void promoTokoGO() {
         driver.findElement(transaction).click();
-        return driver.findElement(promoTokoGO);
+        driver.findElement(promoTokoGO).click();
     }
 
-    public WebElement compareHargaJual() {
+    public void compareHargaJual() {
         driver.findElement(transaction).click();
         driver.findElement(compareDataPromo).click();
-        return driver.findElement(compareHargaJual);
+        driver.findElement(compareHargaJual).click();
     }
 
 }

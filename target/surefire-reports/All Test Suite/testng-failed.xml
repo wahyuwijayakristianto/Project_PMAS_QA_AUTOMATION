@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [All Test Suite]">
+  <test thread-count="5" verbose="0" name="C:/Users/Wahyu/IdeaProjects/PMAS(failed)" parallel="tests">
+    <classes>
+      <class name="Transaction.OutStore_Tenant">
+        <methods>
+          <include name="closeBrowser"/>
+          <include name="outStoreCekData"/>
+        </methods>
+      </class> <!-- Transaction.OutStore_Tenant -->
+    </classes>
+  </test> <!-- C:/Users/Wahyu/IdeaProjects/PMAS(failed) -->
+</suite> <!-- Failed suite [All Test Suite] -->
